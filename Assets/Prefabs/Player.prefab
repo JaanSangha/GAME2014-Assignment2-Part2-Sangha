@@ -5188,6 +5188,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aff54edef48501b4fa36cd32af07423c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreText: {fileID: 0}
+  scoreTextWin: {fileID: 0}
+  scoreTextLose: {fileID: 0}
+  heartOne: {fileID: 0}
+  heartTwo: {fileID: 0}
+  heartThree: {fileID: 0}
+  winScreen: {fileID: 0}
+  loseScreen: {fileID: 0}
   joystick: {fileID: 0}
   sensitivity: 0.5
   horizontalForce: 10
@@ -5211,6 +5219,7 @@ MonoBehaviour:
   shakeDuration: 0.5
   shakeTimer: 0
   isCameraShaking: 0
+  score: 0
 --- !u!1 &4570517551951168962
 GameObject:
   m_ObjectHideFlags: 0

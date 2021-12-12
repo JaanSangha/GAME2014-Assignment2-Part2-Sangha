@@ -225,6 +225,11 @@ public class PlayerBehaviour : MonoBehaviour
         {
             transform.SetParent(other.transform);
         }
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            Destroy(other.gameObject);
+            score += 50;
+        }
     }
 
     private void OnCollisionExit2D(Collision2D other)
@@ -258,6 +263,17 @@ public class PlayerBehaviour : MonoBehaviour
             score += 50;
             scoreText.text = score + "";
             hitSound.Play();
+        }
+        if (other.gameObject.CompareTag("Potion"))
+        {
+            if (Lives< 3)
+            {
+                Lives = Lives + 1;
+            }
+            score += 50;
+            scoreText.text = score + "";
+            hitSound.Play();
+            Destroy(other.gameObject);
         }
     }
 

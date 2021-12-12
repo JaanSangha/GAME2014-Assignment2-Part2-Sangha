@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - Bone
   - Water
+  - Potion
   layers:
   - Default
   - TransparentFX
