@@ -10,13 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 6942968205239262842}
   - component: {fileID: 6942968205239262789}
-  - component: {fileID: 6942968205239262788}
   - component: {fileID: 6942968205239262841}
   - component: {fileID: 6942968205239262840}
   - component: {fileID: 6942968205239262843}
   m_Layer: 0
   m_Name: Bone
-  m_TagString: Untagged
+  m_TagString: Bone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -87,25 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &6942968205239262788
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6942968205239262791}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 57f1a7f0a7c5f904fb483645fcdbf4c2, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!58 &6942968205239262841
 CircleCollider2D:
   m_ObjectHideFlags: 0

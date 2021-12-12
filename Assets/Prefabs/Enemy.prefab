@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 717407476}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.32, y: -0.86, z: 0}
+  m_LocalPosition: {x: -3.9, y: -1.88, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3347542983166984662}
@@ -54,7 +54,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1383857781}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.261, y: -0.12, z: 0}
+  m_LocalPosition: {x: -2.44, y: -0.12, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3347542983166984662}
@@ -76,7 +76,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8765791281167009598
 Transform:
   m_ObjectHideFlags: 0
@@ -177,7 +177,7 @@ Transform:
   m_GameObject: {fileID: 3347542983166984659}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 54.730423, y: 7.060643, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 717407477}
   - {fileID: 1383857782}
@@ -291,7 +291,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.03889084, y: -0.39454985}
+  m_Offset: {x: -0.07740593, y: -0.9674009}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -302,7 +302,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.9276047, y: 3.115447}
+  m_Size: {x: 2.8964653, y: 2.2012646}
   m_EdgeRadius: 0
 --- !u!68 &6433848931264923946
 EdgeCollider2D:
@@ -320,9 +320,11 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -1.0313759, y: 0.1747675}
-  - {x: -0.12747955, y: 1.5917858}
-  - {x: 0.67559814, y: 0.16228402}
+  - {x: -1.5112114, y: 0.18304062}
+  - {x: -1.2615509, y: 0.8568983}
+  - {x: -0.13691711, y: 1.4472669}
+  - {x: 1.0601387, y: 0.8934288}
+  - {x: 1.3291702, y: 0.17055666}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
@@ -375,7 +377,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 2.2353983
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -532,7 +534,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4712367541516968545}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.257, y: 0, z: 0}
+  m_LocalPosition: {x: -2.05, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3347542983166984662}

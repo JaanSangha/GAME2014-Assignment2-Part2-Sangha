@@ -3,9 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using Cinemachine;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerBehaviour : MonoBehaviour
 {
+
+    public Text scoreText;
+    public Text scoreTextWin;
+    public Text scoreTextLose;
+    public GameObject heartOne;
+    public GameObject heartTwo;
+    public GameObject heartThree;
+    public GameObject winScreen;
+    public GameObject loseScreen;
+
     [Header("Touch Input")] 
     public Joystick joystick;
     [Range(0.01f, 1.0f)]
@@ -40,7 +51,9 @@ public class PlayerBehaviour : MonoBehaviour
     public float shakeDuration;
     public float shakeTimer;
     public bool isCameraShaking;
+    public int score = 0;
 
+    private int Lives = 3;
     private GameController gameController;
     private Rigidbody2D rigidbody;
     private Animator animatorController;
@@ -48,6 +61,7 @@ public class PlayerBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Time.timeScale = 1;
         isCameraShaking = false;
         shakeTimer = shakeDuration;
 
@@ -60,6 +74,7 @@ public class PlayerBehaviour : MonoBehaviour
         jumpSound = audioSources[0];
         hitSound = audioSources[1];
 
+        scoreText.text = score + "";
         dustTrail = GetComponentInChildren<ParticleSystem>();
 
         perlin = virtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
@@ -68,19 +83,44 @@ public class PlayerBehaviour : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        if(Lives == 3)
+        {
+            heartOne.SetActive(true);
+            heartTwo.SetActive(true);
+            heartThree.SetActive(true);
+        }
+        else if (Lives == 2)
+        {
+            heartOne.SetActive(true);
+            heartTwo.SetActive(true);
+            heartThree.SetActive(false);
+        }
+        else if (Lives == 1)
+        {
+            heartOne.SetActive(true);
+            heartTwo.SetActive(false);
+            heartThree.SetActive(false);
+        }
+        else if (Lives <= 1)
+        {
+            heartOne.SetActive(false);
+            heartTwo.SetActive(false);
+            heartThree.SetActive(false);
+            GameOver();
+        }
         Move();
         CheckIfGrounded();
         //OnDrawGizmos();
         // Camera Shake Control
         if (isCameraShaking)
         {
-            shakeTimer -= Time.deltaTime;
-            if (shakeTimer <= 0.0f) // timed out
-            {
-                perlin.m_AmplitudeGain = 0.0f;
-                shakeTimer = shakeDuration;
-                isCameraShaking = false;
-            }
+            //shakeTimer -= Time.deltaTime;
+            //if (shakeTimer <= 0.0f) // timed out
+            //{
+            //    perlin.m_AmplitudeGain = 0.0f;
+            //    shakeTimer = shakeDuration;
+            //    isCameraShaking = false;
+            //}
         }
     }
 
@@ -150,6 +190,12 @@ public class PlayerBehaviour : MonoBehaviour
         isGrounded = (hit) ? true : false;
     }
 
+    private void GameOver()
+    {
+        Time.timeScale = 0;
+        loseScreen.SetActive(true);
+        scoreTextLose.text = ("Your Score: " + score);
+    }
     private float FlipAnimation(float x)
     {
         // depending on direction scale across the x-axis either 1 or -1
@@ -194,13 +240,24 @@ public class PlayerBehaviour : MonoBehaviour
         if (other.gameObject.CompareTag("Bullet"))
         {
             hitSound.Play();
-            ShakeCamera();
+            Lives--;
+            transform.position = gameController.currentSpawnPoint.position;
+        }
+        if (other.gameObject.CompareTag("Water"))
+        {
+            hitSound.Play();
+            Lives--;
             transform.position = gameController.currentSpawnPoint.position;
         }
         if (other.gameObject.CompareTag("Finish"))
         {
             hitSound.Play();
-           
+        }
+        if (other.gameObject.CompareTag("Bone"))
+        {
+            score += 50;
+            scoreText.text = score + "";
+            hitSound.Play();
         }
     }
 

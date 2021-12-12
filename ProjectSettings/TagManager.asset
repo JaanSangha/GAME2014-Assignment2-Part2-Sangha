@@ -7,6 +7,8 @@ TagManager:
   - Platform
   - Bullet
   - Enemy
+  - Bone
+  - Water
   layers:
   - Default
   - TransparentFX
