@@ -196,6 +196,13 @@ public class PlayerBehaviour : MonoBehaviour
         loseScreen.SetActive(true);
         scoreTextLose.text = ("Your Score: " + score);
     }
+
+    private void GameWin()
+    {
+        Time.timeScale = 0;
+        winScreen.SetActive(true);
+        scoreTextWin.text = ("Your Score: " + score);
+    }
     private float FlipAnimation(float x)
     {
         // depending on direction scale across the x-axis either 1 or -1
@@ -257,6 +264,7 @@ public class PlayerBehaviour : MonoBehaviour
         }
         if (other.gameObject.CompareTag("Finish"))
         {
+            GameWin();
             hitSound.Play();
         }
         if (other.gameObject.CompareTag("Bone"))
