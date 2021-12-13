@@ -508,6 +508,7 @@ MonoBehaviour:
   player: {fileID: 0}
   bulletPrefab: {fileID: 2207681145639796414, guid: 278cf6d11d4ac084ca8edd2f6954411e, type: 3}
   spitSound: {fileID: 0}
+  bonePrefab: {fileID: 6942968205239262791, guid: e330ec72493360d41bcce94ba5ed1880, type: 3}
 --- !u!1 &4712367541516968545
 GameObject:
   m_ObjectHideFlags: 0

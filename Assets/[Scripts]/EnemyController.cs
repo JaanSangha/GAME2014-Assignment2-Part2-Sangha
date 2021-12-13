@@ -26,6 +26,7 @@ public class EnemyController : MonoBehaviour
     public AudioSource spitSound;
 
     private Rigidbody2D rigidbody;
+    public GameObject bonePrefab;
 
     // Start is called before the first frame update
     void Start()
@@ -147,6 +148,18 @@ public class EnemyController : MonoBehaviour
         if (other.gameObject.CompareTag("Enemy"))
         {
             Flip();
+        }
+
+        if (other.gameObject.CompareTag("Player"))
+        {
+            Random.InitState(System.DateTime.Now.Millisecond);
+
+            int dropBone = Random.Range(0, 10);
+            Debug.Log(dropBone);
+            if(dropBone >= 5)
+            {
+                Instantiate(bonePrefab, transform.position, Quaternion.identity);
+            }
         }
     }
 

@@ -229,6 +229,7 @@ public class PlayerBehaviour : MonoBehaviour
         {
             Destroy(other.gameObject);
             score += 50;
+            scoreText.text = score + "";
         }
     }
 
